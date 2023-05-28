@@ -1,27 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-import Heading from './components/heading';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Mybutton from './components/Mybutton';
-
+import React from 'react';
+import Header from './components/pemilu/Header';
+import Navbar from './components/pemilu/Navbar';
+import CandidateSection from './components/pemilu/CandidateSection';
+import ScheduleSection from './components/pemilu/ScheduleSection';
+import RegistrationForm from './components/pemilu/RegistrationForm';
+import VotingInstructionsSection from './components/pemilu/VotingInstructionsSection';
 function App() {
-
-  const isClickButton = ()=>{
-    return alert("Button clicked");
+    return (
+      <div className="container">
+        <Header />
+        <Navbar />
+  
+        <main>
+          <CandidateSection />
+          <ScheduleSection />
+          <VotingInstructionsSection />
+          <RegistrationForm />
+        </main>
+  
+        <footer>
+          {/* Tambahkan konten footer jika diperlukan */}
+        </footer>
+      </div>
+    );
   }
-  const WelcomeMessage = ' Selamat Datang User';
-  const FooterText = 'Copyright © 2023 El-Mafia'
+  
+  export default App;
 
-  return (
-    <div className="App">
-    <Heading WelcomeMessage = {WelcomeMessage}/>
-    <Navbar/>
-    <Mybutton isClickButton = {isClickButton}/>
-    <Footer FooterText = {FooterText}/>
-    
-    </div>
-  );
-}
 
-export default App;
